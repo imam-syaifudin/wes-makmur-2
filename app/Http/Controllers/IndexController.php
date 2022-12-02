@@ -86,18 +86,12 @@ class Jamu {
 
 class Saran extends Jamu {
     public function getSaran($keluhan,$tahunLahir){
+        $saran = '';
+
         if ( $this->umur($tahunLahir) <=10 ){
-            if ( $this->namaJamu($keluhan)['nama_jamu'] == 'Beras Kencur' && $keluhan == 'keselo'){
-                return 'Dioleskan 1X';
-            } else {
-                return 'Dikonsumsi 1X';
-            }
+            return $keluhan == 'keseleo' ? 'Dioleskan 1x' : 'Dikonsumsi 1x';
         } else {
-            if ( $this->namaJamu($keluhan)['nama_jamu'] == 'Beras Kencur' && $keluhan == 'keselo'){
-                return 'Dioleskan 2X';
-            } else {
-                return 'Dikonsumsi 2X';
-            }
-        }
+            return $keluhan == 'keseleo' ? 'Dioleskan 2x' : 'Dikonsumsi 2x';
+        } 
     }
 }
